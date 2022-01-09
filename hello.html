@@ -4,13 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello</title>
 </head>
-<body>
+<body> 
     <canvas width="600" height="600"></canvas>
 
     <script>
-        let canvas = document.querySelector('canvas')
+
+
+
+
+
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        context.fillStyle = 'blue';
+        // context.fillRect(100, 100, 400, 400);
+
+        context.lineWidth = 4;
+        context.beginPath();
+        context.rect(100, 100, 400, 400);
+        // context.stroke();
+
+        context.beginPath();
+        // context.arc(300, 300, 100, 0, 360);
+        context.arc(300, 300, 100, 0, Math.PI*2);
+        // context.stroke();
+
+        for (let i = 0; i < 5; i++) {
+            const width = 60;
+            const height = 60;
+            const gap = 20;
+            let x, y;
+            
+            for (let j = 0; j < 5; j++){
+                x = 100 + (width + gap) * i;
+                y = 100 + (width + gap) * j;
+    
+                context.beginPath();
+                context.rect(x, y, width, height);
+                context.stroke();
+                
+                if(Math.random() > 0.5) {
+                    context.beginPath();
+                    context.rect(x + 8, y + 8, width - 16, height - 16);
+                    context.stroke();
+                }
+            }
+        }
 
 
 
@@ -29,7 +70,7 @@
         function saySomething(param) {
             console.log(param);
         }
-
+ 
         saySomething(sentence);
 
 
@@ -57,6 +98,29 @@
 
 
 
+        let years = [];
+        let menu = ['starter', 'main', 'dessert', 'drinks', 'sides'];
+
+        for (let i = 0; i < menu.length; i++) {
+            console.log(menu[i]);
+        }
+
+
+
+        
+
+        for (let i = 0; i < 10; i++) {
+            years.push(2040 + i);
+        }
+
+        console.log(years);
+
+
+
+
+
+        const gravity = 9.81;
+        let velocity = 0.0;
     </script>
 </body>
 </html>
